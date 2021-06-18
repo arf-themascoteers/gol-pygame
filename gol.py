@@ -6,7 +6,7 @@ import numpy as np
 pygame.init()
 
 Point = namedtuple('Point', ['x', 'y'])
-SPEED = 1000
+SPEED = 10
 
 # rgb colors
 WHITE = (255, 255, 255)
@@ -30,11 +30,13 @@ class GOL:
         pygame.display.set_caption("Game of Life")
         self.clock = pygame.time.Clock()
         self.grid = np.zeros([self.ROWS, self.COLS], dtype=np.bool8)
-        self.activate(2, 13)
-        self.activate(3, 13)
-        self.activate(4, 13)
-        self.activate(4, 12)
-        self.activate(3, 11)
+        self.activate(10, 10)
+        self.activate(10, 11)
+        self.activate(10, 12)
+        self.activate(11, 10)
+        self.activate(9, 11)
+
+
 
     def activate(self, x, y):
         self.grid[x, y] = True
